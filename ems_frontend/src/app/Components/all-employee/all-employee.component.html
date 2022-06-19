@@ -1,0 +1,64 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<mat-card class="mt20">
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label >Search</mat-label>
+        <input [(ngModel)]="searchText" 
+          name="searchText" required=""  name="searchText"
+         matInput placeholder="Placeholder">
+         
+      </mat-form-field>
+</mat-card>
+<mat-card  class="mt20" *ngFor="let q of employees | filter:searchText">
+    <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+
+    <mat-card-title>{{q.employeeName}}</mat-card-title>
+    <!-- <mat-card-subtitle>{{q.salary}}</mat-card-subtitle> -->
+</mat-card-header>
+<mat-card-content>
+ 
+</mat-card-content>
+<mat-card-actions>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Joining Date</th>
+                <th scope="col">Salary</th>
+                <th scope="col">Gender</th>
+                <th scope="col">delete</th>
+                <th scope="col">update</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            
+                <tr>
+                    <th scope="row">{{q.employeeId}}</th>
+                    <td>{{q.employeeName}}</td>
+                    <td>{{q.contactNo}}</td>
+                    <td>{{q.dob}}</td>
+                    <td>{{q.salary}}</td>
+                    <td>{{q.gender}}</td>
+                    <td>
+                        <button (click)="delete(q.employeeId)" mat-fab color="accent" aria-label="Example icon button with a delete icon">
+                            <mat-icon>delete</mat-icon>
+                          </button>
+                                        
+                    </td>
+                    <td> <button [routerLink]="'/emp/update-employee/'+q.employeeId" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                        <mat-icon>edit</mat-icon>
+                      </button></td>
+                </tr>
+            
+        </tbody>
+    </table>
+</mat-card-actions>
+
+</mat-card>
+<div class="container text-center mt20"  >
+    <button mat-raised-button color="primary"routerLink="/emp/add">Add new Employee</button>
+</div>

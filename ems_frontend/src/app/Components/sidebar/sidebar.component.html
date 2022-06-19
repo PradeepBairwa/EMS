@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<mat-card class="mt20">
+    <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item routerLink="/emp/add">
+            <mat-icon mat-list-icon>add</mat-icon>Add Employee
+        </button>
+        <button mat-list-item routerLink="/emp/search-employee">
+            <mat-icon mat-list-icon>search</mat-icon>Search Employee
+        </button>
+        <button mat-list-item routerLink="/emp/all-employee">
+            <mat-icon mat-list-icon>list</mat-icon>All Employees
+        </button>
+       
+        <button (click)="logOut()" mat-list-item routerLink="/login" >
+            <mat-icon mat-list-icon>logout</mat-icon>Logout
+        </button>
+
+    </mat-action-list>
+
+</mat-card>	

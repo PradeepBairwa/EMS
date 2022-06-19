@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <mat-card class="mt20">
+                <div class="container text-center">
+                    <!-- <img src="../../../assets/Logo.png" alt="" height="170" width="170"/> -->
+
+                </div>
+                <h1 class="text-center">Add-Employee</h1>
+               
+                <form (ngSubmit)="addEmp()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Employee Name</mat-label>
+                        <input 
+                         [(ngModel)]="employee.employeeName" name="uemployeeName" required="" type="text"
+                         matInput placeholder="Placeholder">
+                         <mat-hint>Valid Employee Name</mat-hint>
+                      </mat-form-field>
+                      <!-- Salary -->
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label> Employee salary</mat-label>
+                        <input
+                        [(ngModel)]="employee.salary" name="slary" required=""  
+                         type="text" matInput placeholder="Placeholder">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Employee Contact No</mat-label>
+                        <input 
+                         [(ngModel)]="employee.contactNo" name="contactNo" required=""  name="username"
+                         matInput placeholder="Placeholder" type="number">
+                         <mat-hint>contact No</mat-hint>
+                      </mat-form-field>
+                      <!-- Salary -->
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label> Employee Gender</mat-label>
+                        <input
+                        [(ngModel)]="employee.gender" name="gender" required=""  
+                         type="text" matInput placeholder="Placeholder">
+                      </mat-form-field>
+                      <mat-form-field class="full-width" appearance="outline">
+                        <mat-label> Employee DOB</mat-label>
+                        <input
+                        [(ngModel)]="employee.dob" name="dob" required=""  
+                         type="text" matInput placeholder="Placeholder">
+                      </mat-form-field>
+
+
+
+
+
+                      <div class="contsiner text-center">
+                          <button class="mr20" type="submit" mat-raised-button color="primary">Add Employee</button>
+                          <button (click)="reset()"  class="ml20" mat-raised-button color="accent">Reset</button>
+
+                      </div>
+
+                </form>
+            </mat-card>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- {{employee|json}} -->
